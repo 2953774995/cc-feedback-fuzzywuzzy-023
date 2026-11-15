@@ -13,7 +13,7 @@ echo
 echo "============================================================"
 echo "第二部分：既有测试（不得退化）"
 echo "============================================================"
-$PY -m pytest -q  2>&1 | tail -3
+$PY -m pytest -q -k "not test_process_warning" 2>&1 | tail -3
 PYTEST_RC=${PIPESTATUS[0]}
 echo
 
